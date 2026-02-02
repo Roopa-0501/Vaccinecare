@@ -1,0 +1,13 @@
+[2025-10-17 18:23:45] Input: {"message":"hello"}
+[2025-10-17 18:24:02] Input: {"message":"tell me about vaccinecare"}
+[2025-10-17 18:24:13] HTTP 0: 
+[2025-10-17 18:24:13] ERROR: cURL error: Failed to connect to api-inference.huggingface.co port 443: Connection timed out
+[2025-10-17 18:24:30] HTTP 0: 
+[2025-10-17 18:24:30] ERROR: cURL error: Failed to connect to api-inference.huggingface.co port 443: Connection timed out
+[2025-10-17 18:24:34] Input: {"message":"hello"}
+[2025-10-17 18:25:02] HTTP 0: 
+[2025-10-17 18:25:02] ERROR: cURL error: Failed to connect to api-inference.huggingface.co port 443: Connection timed out
+[2025-10-17 18:35:59] Input: {"message":"hello"}
+[2025-10-17 18:36:13] HTTP 404: Not Found
+[2025-10-17 18:37:30] Input: {"message":"give me details about vaccinations"}
+[2025-10-17 18:37:44] HTTP 404: Not Found

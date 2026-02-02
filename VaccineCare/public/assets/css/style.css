@@ -1,0 +1,437 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header {
+    background: url("../images/bg1.jpeg") no-repeat center center;
+    background-size: cover;
+    min-height: 100vh; /* full screen height */
+    color: #ffff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header::before { content: ""; 
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
+    background: rgba(0,0,0,0.4); 
+    z-index: 0; } header h1, header p { position: relative; z-index: 1; }
+header h1.display-4 { color: #fff !important; /* pure white */ font-weight: 700 !important; /* thick/bold */ } header p.lead { color: #fff !important; /* white for paragraph */ }
+
+/* Navbar Styling */
+.navbar {
+      background: linear-gradient(90deg, #003366, #0056b3);
+      height: 80px;
+    }
+    .navbar-brand {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: white !important;
+    }
+    .navbar-nav .nav-link {
+      color: white !important;
+      font-size: 1.3rem;
+      font-weight: 500;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .navbar-nav .nav-link:hover {
+      text-decoration: underline;
+      color: white !important;
+    }
+    .nav-link.btn-white:hover {
+      text-decoration: underline;
+      background: none;
+      color: white !important;
+    }
+/* =========================
+   Login & Register Pages
+=========================== */
+
+/* Background for login or register */
+body.login-page .login-section,
+body.login-page.register-section .login-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-top: 80px; /* account for fixed navbar */
+}
+
+/* =========================
+   Fixes for Login & Register Pages
+=========================== */
+
+/* Page Title (Login / Register headings) */
+.login-section .page-title {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+/* Push the whole section down below navbar */
+body.login-page .login-section,
+body.login-page.register-section .login-section {
+    padding-top: 180px;   /* more space under navbar */
+    padding-bottom: 140px; /* prevents footer overlap */
+    align-items: flex-start; /* so form stays below navbar */
+}
+
+
+/* Different backgrounds for each page */
+body.login-page .login-section {
+    background-image: url("assets/images/child.png");
+}
+body.login-page.register-section .login-section {
+    background-image: url("assets/images/family.png");
+}
+
+/* Dark + blur overlay */
+.login-section::before {
+    content: "";
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+    z-index:1;
+}
+
+/* Glass effect card */
+.login-card {
+    position: relative;
+    z-index: 2;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Card Title */
+.login-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.login-card label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #ddd;
+}
+
+/* Inputs */
+.login-card .form-control {
+    border-radius: 10px;
+    padding: 10px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #000 !important;
+}
+.login-card .form-control:focus {
+    background: #fff;
+    border-color: #66ccff;
+    box-shadow: 0 0 6px #66ccff;
+    outline: none;
+}
+
+/* Button */
+.login-card .btn-primary {
+    border-radius: 10px;
+    font-weight: 600;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(90deg, #004080, #0066cc);
+    border: none;
+    transition: 0.3s;
+    color: white;
+}
+.login-card .btn-primary:hover {
+    background: linear-gradient(90deg, #003366, #004080);
+}
+
+/* Extra Links */
+.text-center.small a {
+    font-size: 16px;
+    color: #66ccff;
+}
+
+/* Force black placeholder text */
+.login-card input::placeholder { color: #000 !important; opacity: 1 !important; }
+
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #003366, #0056b3);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+
+/* Feature Cards */ 
+.card { 
+    border: none; 
+    border-radius: 12px; 
+    transition: transform 0.3s, box-shadow 0.3s; 
+    height: 220px; /* control card height */ 
+    overflow: hidden; 
+} 
+.card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15); 
+} 
+/* Card Images */ 
+.card-img-top { 
+    height: 100px; /* smaller image */ 
+    object-fit: contain; /* keeps image visible */ 
+    border-top-left-radius: 12px; 
+    border-top-right-radius: 12px; 
+    padding: 10px; 
+} /* Make card title text smaller */ /* Card Title Font */ 
+.card-title { 
+    font-family:Arial, Helvetica, sans-serif; /* same as VaccineCare title */ 
+    font-size: 1rem; /* slightly bigger */ 
+    font-weight: 600; /* bold for clarity */ 
+    color: #003366; /* navy blue for consistency */ 
+    margin-top: 8px; 
+} /* Card Body Text */ 
+.card-body { 
+    font-family: 'Roboto', sans-serif; /* same as nav links */ 
+    font-size: 0.9rem; /* smaller than title */ 
+    color: #555; /* neutral gray for readability */ 
+} /* Features Section spacing */ 
+section#features { 
+    padding-top: 60px; 
+    padding-bottom: 60px; 
+}
+
+/* Make sure login/register section has enough breathing room */
+body.login-page .login-section,
+body.register-page .login-section {
+    min-height: calc(100vh - 100px); /* full viewport height minus navbar/footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;   /* space under navbar */
+    padding-bottom: 100px; /* space above footer */
+}
+
+/* Ensure card doesn't stick to footer */
+.login-card {
+    margin-bottom: 40px;
+}
+
+/* About Section */
+.about-section {
+    background-color: #fff; /* light gray background */
+    padding: 60px 20px;
+}
+
+.about-card {
+    background: #fff; /* white card */
+    padding: 25px 20px;
+    
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-card h3 {
+    font-size: 1.9rem;
+    color: #003366;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.about-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+
+/* FAQ Section */
+.faq-section {
+    background-color: #fff; /* slightly darker gray */
+    padding: 60px 20px;
+}
+
+.faq-section h3 {
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #003366;
+    text-align: center;
+}
+
+/* FAQ accordion */
+.faq-item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.faq-item input {
+    display: none;
+}
+
+.faq-item label {
+    display: block;
+    font-weight: 600;
+    padding: 12px;
+    background: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 8px;
+}
+
+.faq-item label:hover {
+    background: #d6d8db;
+}
+
+.faq-item .faq-content {
+    max-height: 0;
+    padding: 0 12px;
+    font-size: 0.95rem;
+    color: #555;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+/* Show content when checkbox is checked */
+.faq-item input:checked ~ .faq-content {
+    max-height: 200px;
+    padding: 12px;
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+}
+
+/* ==============================
+   Responsive Media Queries
+================================ */
+@media (max-width: 992px) {
+    header h1.display-4 {
+        font-size: 2.5rem;
+    }
+    header p.lead {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.8rem;
+    }
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+    }
+    header {
+        min-height: 70vh;
+        padding: 60px 20px;
+    }
+    .card {
+        height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    header h1.display-4 {
+        font-size: 2rem;
+    }
+    header p.lead {
+        font-size: 0.9rem;
+    }
+    section#features {
+        padding: 50px 15px;
+    }
+    #features .col {
+    flex: 0 0 50%;   /* 2 per row */
+    max-width: 50%;
+  }
+  .card-img-top {
+    display: block;      /* removes inline gap */
+    margin-bottom: 0;    /* no extra space */
+    padding: 0;          /* remove padding under image */
+    height: 70px;        /* keep smaller height for mobile */
+    object-fit: contain; /* make sure image fits */
+  }
+
+  .card-body {
+    padding-top: 5px;    /* little breathing room above text */
+  }
+
+  .card-title {
+    font-size: 0.8rem;   /* smaller text */
+  }
+
+  .card-body {
+    font-size: 0.75rem;
+  }
+}
+
+/* =======================
+   Mobile Navbar Fix
+======================= */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 80px;              /* height of navbar */
+    right: 0;
+    width: 180px;            /* sidebar width */
+    height: auto;            /* auto height based on content */
+    max-height: calc(100vh - 80px); /* don't overflow screen */
+    background-color: #fff;
+    padding: 1rem;
+    overflow-y: auto;
+    transform: translateX(100%);   /* hidden by default */
+    transition: transform 0.3s ease-in-out;
+    z-index: 1050;
+  }
+
+  /* Slide in when toggler is clicked */
+  .navbar-collapse.show {
+    transform: translateX(0);
+  }
+
+  /* Navbar links inside sidebar */
+  .navbar-nav .nav-link {
+    color: #000 !important;
+    margin: 10px 0;
+  }
+
+  /* Make hamburger (toggler) visible */
+  .navbar-toggler {
+    border-color: rgba(255,255,255,0.6);
+  }
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+}
+
+@media (max-width: 768px) {
+    .login-card {
+        width: 90%;
+        padding: 20px;
+    }
+}
